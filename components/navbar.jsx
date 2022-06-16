@@ -51,7 +51,7 @@ const navbar = () => {
             <img className="w-10 h-9 m-1 mt-2"  src="/hamburger.png" alt=""/>
           <Link href="/">Recipeas</Link>
         </div>
-        <div>
+        <div className="hidden sm:flex">
           {user ? (
             <>
            
