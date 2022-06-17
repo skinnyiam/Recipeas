@@ -57,7 +57,7 @@ const navbar = () => {
            
               <ul className="flex mt-2">
               <SearchField />
-              <button className="text-base text-gray-800 font-medium mr-4">
+              <button className="text-base  text-gray-800 font-medium mr-4">
                 <li>
                   <Link href="/">Home</Link>
                 </li>

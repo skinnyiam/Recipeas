@@ -1,28 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Result from "../components/result";
-import Link from "next/link";
 
 const Dashboard = () => {
   const router = useRouter();
 
-  
-  const APP_KEY = "aee22559515b4e4d95d5afe9b86e0abc";
+  const APP_KEY = "294e46d22b5e47a68cd0fe98eb601ea5";
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     getRecipeas();
     setSearch(router.query.q);
   }, [router.query.q]);
-
   const getRecipeas = async () => {
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/${search}?apiKey=${APP_KEY}&number=9`
+      `https://api.spoonacular.com/recipes/complexSearch/?apiKey=${APP_KEY}&number=9&query=${router.query.q}`
     );
     const data = await response.json();
-    setRecipes(data.recipes);
+    setRecipes(data.results);
     console.log(data);
-    
   };
 
   const handleSubmit = (event) => {
@@ -31,17 +27,14 @@ const Dashboard = () => {
       pathname: "/dashboard",
       query: {
         q: search,
-
       },
     });
   };
- 
+
   const [search, setSearch] = useState(router.query.q);
- 
 
   const updateSearch = (e) => {
     setSearch(e.target.value);
-    
   };
 
   return (
@@ -71,7 +64,7 @@ const Dashboard = () => {
               placeholder="Search your recipeas..."
               required
               onChange={updateSearch}
-              value={search || ''}
+              value={search || ""}
             />
             <button
               type="button"
@@ -91,20 +84,18 @@ const Dashboard = () => {
               </svg>
             </button>
           </div>
-          
         </form>
       </div>
       <div className="mx-auto mt-10  pt-4 max-w-[1180px]  h-[700px] text-2xl    justify-center ">
         <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4">
           {recipes.map((recipe) => {
             return (
-              
-                 <Result
-                 key={recipe.id}
-                 title={recipe.title}
-               
+              <Result
+                id={recipe.id}
+                key={recipe.id}
+                title={recipe.title}
+                image={recipe.image}
               />
-              
             );
           })}
         </div>

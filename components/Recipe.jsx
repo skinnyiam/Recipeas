@@ -9,7 +9,6 @@ const Recipe = ({title,image,occasions}) => {
         </div>
         <div className='p-[4px]'>
         <img className='mt-[20px] rounded w-54 h-54' src={image} alt="" />
-        
         </div>
         
     </div>

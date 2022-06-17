@@ -4,7 +4,7 @@ import Recipe from "../components/Recipe";
 
 
 const Popular = () => {
-  const APP_KEY = "aee22559515b4e4d95d5afe9b86e0abc";
+  const APP_KEY = "294e46d22b5e47a68cd0fe98eb601ea5";
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -16,6 +16,7 @@ const Popular = () => {
       `https://api.spoonacular.com/recipes/random?apiKey=${APP_KEY}&number=9`
     );
     const data = await response.json();
+    
     console.log(data);
     setRecipes(data.recipes);
   };
@@ -29,6 +30,7 @@ const Popular = () => {
             return (
               
                 <Recipe
+                  key={recipe.id}
                   title={recipe.title}
                   image={recipe.image}
                   ocassions={recipe.ocassions}
