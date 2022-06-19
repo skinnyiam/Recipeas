@@ -14,23 +14,23 @@ import SearchField from "../components/searchField";
 const navbar = () => {
   const { user, logout } = useAuth();
   const router = useRouter();
-  const {systemTheme , theme, setTheme} = useTheme ();
-  const renderThemeChanger = () => {
+  // const {systemTheme , theme, setTheme} = useTheme ();
+//   const renderThemeChanger = () => {
 
-    const currentTheme = theme === "system" ? systemTheme : theme ;
+//     const currentTheme = theme === "system" ? systemTheme : theme ;
 
-    if(currentTheme ==="light"){
-      return (
-        <SunIcon className="w-10 h-10 text-yellow-500 " role="button" onClick={() => setTheme('dark')} />
-      )
-    }
+//     if(currentTheme ==="light"){
+//       return (
+//         <SunIcon className="w-10 h-10 text-yellow-500 " role="button" onClick={() => setTheme('dark')} />
+//       )
+//     }
 
-    else {
-      return (
-        <MoonIcon className="w-10 h-10 text-gray-900 " role="button" onClick={() => setTheme('light')} />
-      )
-    }
- };
+//     else {
+//       return (
+//         <MoonIcon className="w-10 h-10 text-gray-900 " role="button" onClick={() => setTheme('light')} />
+//       )
+//     }
+//  };
   
   return (
     <>
@@ -57,7 +57,7 @@ const navbar = () => {
            
               <ul className="flex mt-2">
               <SearchField />
-              <button className="text-base  text-gray-800 font-medium mr-4">
+              <button className="text-base text-gray-800 font-medium mr-4">
                 <li>
                   <Link href="/">Home</Link>
                 </li>

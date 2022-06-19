@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-const APP_KEY = "294e46d22b5e47a68cd0fe98eb601ea5";
+const APP_KEY = "aee22559515b4e4d95d5afe9b86e0abc";
 
 const fullDetails = () => {
   const router = useRouter();
@@ -13,21 +13,29 @@ const fullDetails = () => {
   }, [router.query.q]);
 
   const getRecipeas = async () => {
+
+    
+
     const response = await fetch(
       `https://api.spoonacular.com/recipes/${router.query.q}/information?apiKey=${APP_KEY}&includeNutrition=true`
     );
     const data = await response.json();
     setdetails(data);
+    
     console.log(data);
-    console.log(data.extendedIngredients)
+    
   };
   return (
     <>
-      <div className="h-full w-full pt-[200px] flex">
-        <div>
-          {details.title}
-          <img src={details.image} alt="" />
-          <p>{details.dishTypes}</p>
+      <div className="h-full w-full pt-[100px] flex-col">
+        <div className="flex justify-center items-center flex-col w-[400px] rounded-lg shadow-gray-900 shadow-2xl bg-slate-300 h-[400px] mx-auto">
+          <h1 className="text-xl text-green-400">{details.title}</h1>
+          <img className=" mt-2 rounded-full w-[350px] h-[350px]" src={details.image} alt="" />
+          {/* <p>{details.dishTypes?.map((dishtype)=>{
+            return(
+              <li key={dishtype}>{dishtype}</li>
+            )
+          })}</p> */}
         </div>
         <div>
           <button>Ingredients</button>
@@ -36,9 +44,20 @@ const fullDetails = () => {
           <h3 dangerouslySetInnerHTML={{ __html: details.instructions }}></h3>
         </div>
         {/* <h3>{deextendedIngredients}</h3> */}
-        <ul>{data.extendedIngredients.map((ingredient)=>{
-          <li>{ingredient.original}</li>
+        <ul>{details.extendedIngredients?.map((ingredient)=>{
+          return(
+          <li >
+            {ingredient?.steps((step)=>{
+              return(
+                <li key={step.name}>
+                     {step}
+                </li>
+              )
+              })}
+          </li>
+          )
         })}</ul>
+         
       </div>
     </>
   );
