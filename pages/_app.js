@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
   return (
     // <ThemeProvider enableSystem={true} attribute="class">
       <AuthContextProvider>
-        <Navbar />{" "}
+        <Navbar />
         {noAuthRequired.includes(router.pathname) ? (
           <Component {...pageProps} />
         ) : (

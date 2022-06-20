@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState}from "react";
 import Link from "next/link";
 import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/router";
@@ -14,6 +14,13 @@ import SearchField from "../components/searchField";
 const navbar = () => {
   const { user, logout } = useAuth();
   const router = useRouter();
+
+const [nav,setNav]=useState(false)
+  const handleClick= ()=>{
+          setNav(!nav);
+  }
+
+
   // const {systemTheme , theme, setTheme} = useTheme ();
 //   const renderThemeChanger = () => {
 
@@ -51,11 +58,11 @@ const navbar = () => {
             <img className="w-10 h-9 m-1 mt-2"  src="/hamburger.png" alt=""/>
           <Link href="/">Recipeas</Link>
         </div>
-        <div className="hidden sm:flex">
+        <div className="">
           {user ? (
             <>
            
-              <ul className="flex mt-2">
+              <ul className="hidden sm:flex mt-2">
               <SearchField />
               <button className="text-base text-gray-800 font-medium mr-4">
                 <li>
@@ -73,8 +80,7 @@ const navbar = () => {
                 </li>
                 
                 </button>
-                {/* <LightningBoltIcon  className="h-8 w-8 flex-shrink-0 mr-3"/> */}
-                {/* {renderThemeChanger()} */}
+                
                 <button className="w-[65px] h-[38px] border border-blue-700 font-medium rounded text-base text-blue-700"
               onClick={() => {
                 logout();
@@ -83,15 +89,56 @@ const navbar = () => {
             >
               Logout
             </button>
+
+             
               </ul>
+
+             
+
+              <div onClick={handleClick} className="flex sm:hidden  mt-4 ml-4 ">
+              {!nav ? <svg className="z-10" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
+              : <svg className="z-10" stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M15.854 12.854c-0-0-0-0-0-0l-4.854-4.854 4.854-4.854c0-0 0-0 0-0 0.052-0.052 0.090-0.113 0.114-0.178 0.066-0.178 0.028-0.386-0.114-0.529l-2.293-2.293c-0.143-0.143-0.351-0.181-0.529-0.114-0.065 0.024-0.126 0.062-0.178 0.114 0 0-0 0-0 0l-4.854 4.854-4.854-4.854c-0-0-0-0-0-0-0.052-0.052-0.113-0.090-0.178-0.114-0.178-0.066-0.386-0.029-0.529 0.114l-2.293 2.293c-0.143 0.143-0.181 0.351-0.114 0.529 0.024 0.065 0.062 0.126 0.114 0.178 0 0 0 0 0 0l4.854 4.854-4.854 4.854c-0 0-0 0-0 0-0.052 0.052-0.090 0.113-0.114 0.178-0.066 0.178-0.029 0.386 0.114 0.529l2.293 2.293c0.143 0.143 0.351 0.181 0.529 0.114 0.065-0.024 0.126-0.062 0.178-0.114 0-0 0-0 0-0l4.854-4.854 4.854 4.854c0 0 0 0 0 0 0.052 0.052 0.113 0.090 0.178 0.114 0.178 0.066 0.386 0.029 0.529-0.114l2.293-2.293c0.143-0.143 0.181-0.351 0.114-0.529-0.024-0.065-0.062-0.126-0.114-0.178z"></path></svg>}
+              </div>
+
+            <div className="">
+              <ul className={!nav ? "hidden" : " flex absolute top-0 left-0 flex-col justify-center items-center h-screen bg-gray-800 w-full z-0"}>
+              {/* <SearchField /> */}
+              <button className="text-base text-white font-medium mr-4 p-4">
+                <li>
+                  <Link href="/">Home</Link>
+                </li>
+                </button>
+                <button className="text-base text-white font-medium mr-4 p-4">
+                <li>
+                  <Link href="/favourites">Favourites</Link>
+                </li>
+                </button>
+                <button className="text-base text-white font-medium mr-4 p-4">
+                <li>
+                  <Link href="/history">History</Link>
+                </li>
+                </button>
+               <li className="p-4 mr-2">
+                <button className="w-[65px] h-[38px] border  font-medium rounded text-base text-blue-700 "
+              onClick={() => {
+                logout();
+                router.push("/login");
+              }}
+            >
+              Logout
+            </button>
+            </li>
+          
+              </ul>
+              </div>
+             
             
             </>
           ) : (
             <>
-             
-              <ul className="flex mt-2">
+              
+              <ul className=" mt-2 hidden sm:flex">
               <SearchField />
-              {/* <input className="mt-[2px] h-[35px] mr-2 w-16 border border-blue-700 rounded-lg text-base p-[1px] outline-none " type="text" placeholder="search" /> */}
               <button className="text-base text-gray-800 font-medium mr-4">
                 <li>
                   <Link href="/">Home</Link>
@@ -107,9 +154,7 @@ const navbar = () => {
                   <Link href="/history">History</Link>
                 </li>
                 </button>
-                {/* <LightningBoltIcon  className="h-8 w-8 flex-shrink-0 mr-3"/> */}
-
-                {/* {renderThemeChanger()} */}
+               
                 <li>
                 
                   <button className="w-[65px] h-[38px] border border-blue-700 font-medium rounded text-base text-blue-700">
@@ -119,6 +164,42 @@ const navbar = () => {
                 
           
               </ul>
+              
+
+              <div onClick={handleClick} className="flex sm:hidden  mt-4 ml-4 ">
+              {!nav ? <svg className="z-10" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
+              : <svg className="z-10" stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M15.854 12.854c-0-0-0-0-0-0l-4.854-4.854 4.854-4.854c0-0 0-0 0-0 0.052-0.052 0.090-0.113 0.114-0.178 0.066-0.178 0.028-0.386-0.114-0.529l-2.293-2.293c-0.143-0.143-0.351-0.181-0.529-0.114-0.065 0.024-0.126 0.062-0.178 0.114 0 0-0 0-0 0l-4.854 4.854-4.854-4.854c-0-0-0-0-0-0-0.052-0.052-0.113-0.090-0.178-0.114-0.178-0.066-0.386-0.029-0.529 0.114l-2.293 2.293c-0.143 0.143-0.181 0.351-0.114 0.529 0.024 0.065 0.062 0.126 0.114 0.178 0 0 0 0 0 0l4.854 4.854-4.854 4.854c-0 0-0 0-0 0-0.052 0.052-0.090 0.113-0.114 0.178-0.066 0.178-0.029 0.386 0.114 0.529l2.293 2.293c0.143 0.143 0.351 0.181 0.529 0.114 0.065-0.024 0.126-0.062 0.178-0.114 0-0 0-0 0-0l4.854-4.854 4.854 4.854c0 0 0 0 0 0 0.052 0.052 0.113 0.090 0.178 0.114 0.178 0.066 0.386 0.029 0.529-0.114l2.293-2.293c0.143-0.143 0.181-0.351 0.114-0.529-0.024-0.065-0.062-0.126-0.114-0.178z"></path></svg>}
+              </div>
+
+            <div className="">
+              <ul className={!nav ? "hidden" : " flex absolute top-0 left-0 flex-col justify-center items-center h-screen bg-gray-800 w-full z-0"}>
+              
+              <button className="text-base text-white font-medium mr-4 p-4">
+                <li>
+                  <Link href="/">Home</Link>
+                </li>
+                </button>
+                <button className="text-base text-white font-medium mr-4 p-4">
+                <li>
+                  <Link href="/favourites">Favourites</Link>
+                </li>
+                </button>
+                <button className="text-base text-white font-medium mr-4 p-4">
+                <li>
+                  <Link href="/history">History</Link>
+                </li>
+                </button>
+               
+                <li className="p-4 mr-2">
+                
+                  <button className="w-[65px] h-[38px] border  font-medium rounded text-base text-blue-700 ">
+                  <Link  href="/login">Login</Link>
+                  </button>
+                </li>
+                
+          
+              </ul>
+              </div>
             </>
           )}
         </div>

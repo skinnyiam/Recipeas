@@ -5,7 +5,7 @@ import Result from "../components/result";
 const Dashboard = () => {
   const router = useRouter();
 
-  const APP_KEY = "aee22559515b4e4d95d5afe9b86e0abc";
+  const APP_KEY = "9f02ee0f0fe64934bfb55e6ebe6c32f4";
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const Dashboard = () => {
   }, [router.query.q]);
   const getRecipeas = async () => {
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch/?apiKey=${APP_KEY}&number=9&query=${router.query.q}`
+      `https://api.spoonacular.com/recipes/complexSearch/?apiKey=${APP_KEY}&number=40&query=${router.query.q}`
     );
     const data = await response.json();
     setRecipes(data.results);
@@ -42,7 +42,7 @@ const Dashboard = () => {
       <div className=" h-full pt-[100px] flex justify-center ">
         <form onSubmit={handleSubmit} className="flex items-center">
           <label className="sr-only">Search</label>
-          <div className="relative z-0 w-[500px]">
+          <div className="relative z-0 w-[200px] sm:w-[500px]">
             <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
               <svg
                 className=" w-5 h-5 text-gray-500 dark:text-gray-400"
@@ -70,7 +70,7 @@ const Dashboard = () => {
               type="button"
               className="flex absolute inset-y-0 right-0 items-center pr-3"
             >
-              <svg
+              {/* <svg
                 className="sm:m-0 w-4 h-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -81,12 +81,12 @@ const Dashboard = () => {
                   d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
                   // clip-rule="evenodd"
                 ></path>
-              </svg>
+              </svg> */}
             </button>
           </div>
         </form>
       </div>
-      <div className="mx-auto mt-10  pt-4 max-w-[1180px]  h-[700px] text-2xl    justify-center ">
+      <div className=" mx-[40px] sm:mx-auto mt-10  pt-4 max-w-[1180px]  h-full text-2xl    justify-center ">
         <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4">
           {recipes.map((recipe) => {
             return (
