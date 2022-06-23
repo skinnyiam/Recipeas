@@ -19,16 +19,16 @@ const index = () => {
             Cooking With <br />
             Popular Recipes!!
           </p>{" "}
-          <p className="mt-2 text-xl text-gray-600">
+          <p className="mt-2 text-xl text-gray-600 dark:text-blue-500">
             {" "}
             Want to learn cook but confused how to start ?{" "}
           </p>{" "}
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 dark:text-blue-500">
             {" "}
             No need to worry again!{" "}
           </p>{" "}
           <div className="mt-14">
-            <p className="mt-2 text-xl text-gray-600">
+            <p className="mt-2 text-xl text-gray-600 dark:text-blue-500">
               Search your favourite recipeas here....{" "}
             </p>{" "}
             <button

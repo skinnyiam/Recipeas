@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-
-const APP_KEY = "294e46d22b5e47a68cd0fe98eb601ea5";
+import Head from "next/head";
+const APP_KEY = "9f02ee0f0fe64934bfb55e6ebe6c32f4";
 
 const fullDetails = () => {
   const router = useRouter();
@@ -23,11 +23,18 @@ const fullDetails = () => {
   };
   return (
     <>
+  <Head>
+    <title>{details.title} | Recipeas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"></link>
+  </Head>
+
       <div className="h-full w-full pt-[100px] flex-col">
-        <div className="flex justify-center items-center flex-col w-[350px] rounded-lg shadow-gray-900 shadow-2xl bg-slate-300 h-[350px] mx-auto">
-          <h1 className="text-xl font-bold text-indigo-800">{details.title}</h1>
+        <div className="flex justify-center items-center flex-col w-[350px] rounded-lg shadow-gray-900 shadow-2xl bg-gray-200 h-[370px] mx-auto">
+          <h1 className="mx-0 text-xl p-[4px] font-bold text-indigo-800">{details.title}</h1>
           <img
-            className=" mt-2 rounded-full w-[300px] h-[300px]"
+            className=" mt-2 rounded-full w-[300px] h-[300px] border "
             src={details.image}
             alt=""
           />
@@ -41,7 +48,7 @@ const fullDetails = () => {
               {details.dishTypes?.map((dishtype) => {
                 return (
                   <li
-                    className="text-gray-600 text-sm font-thin"
+                    className="text-gray-600 dark:text-white text-sm font-thin"
                     key={dishtype}
                   >
                     {dishtype}
@@ -52,22 +59,22 @@ const fullDetails = () => {
             <h1 className="text-indigo-800 text-xl font-bold pt-12 flex justify-center sm:justify-start">
               Summary:
             </h1>
-            <h3
-              className="text-gray-800 font-semibold text-sm mx-4 sm:mx-0"
+            <p
+              className="text-gray-800 mt-2 p-4 font-semibold text-sm mx-4 sm:mx-0 bg-gray-100 rounded-lg border border-blue-600 drop-shadow-xl"
               dangerouslySetInnerHTML={{ __html: details.summary }}
-            ></h3>
+            ></p>
             <h1 className="text-indigo-800 text-xl font-bold pt-12 flex justify-center sm:justify-start">
               Instructions:
             </h1>
             <h3
-              className="text-gray-800 font-semibold text-sm mx-4 sm:mx-0"
+              className="text-gray-800 mt-2 p-4 font-semibold text-sm mx-4 sm:mx-0 bg-gray-100 rounded-lg border border-blue-600 drop-shadow-xl"
               dangerouslySetInnerHTML={{ __html: details.instructions }}
             ></h3>
-            <h3 className="text-indigo-800 text-xl font-bold pt-12 flex justify-center sm:justify-start">Ingredients:</h3>
+            <h3 className="text-indigo-800 text-xl font-bold pt-12 flex justify-center mb-2 sm:justify-start">Ingredients:</h3>
             
               {details.extendedIngredients?.map((ingredient)=>{
                 return(
-                <li className="text-gray-800 text-sm font-medium mx-4 sm:mx-0" key={ingredient.id}>{ingredient.original}</li>
+                <li className="text-black dark:text-white text-sm font-medium mx-4 sm:mx-0" key={ingredient.id}>{ingredient.original}</li>
                 )
               })}
               

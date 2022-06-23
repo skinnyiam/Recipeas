@@ -86,7 +86,7 @@ const Dashboard = () => {
           </div>
         </form>
       </div>
-      <div className=" mx-[40px] sm:mx-auto mt-10  pt-4 max-w-[1180px]  h-full text-2xl    justify-center ">
+      <div className=" mx-[40px] sm:mx-auto mt-10  pt-4 max-w-[1180px]  h-auto text-2xl    justify-center ">
         <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4">
           {recipes.map((recipe) => {
             return (
