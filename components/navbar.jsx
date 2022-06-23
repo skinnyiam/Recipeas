@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import Link from "next/link";
-import { useAuth } from "../context/AuthContext";
+import { useAuth  } from "../context/AuthContext";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import styles from "../styles/heading.module.css";
@@ -10,7 +10,7 @@ import { SunIcon, MoonIcon } from "@heroicons/react/solid";
 import SearchField from "../components/searchField";
 
 
-const navbar = () => {
+const Navbar = () => {
   const { user, logout } = useAuth();
   const router = useRouter();
   const [mounted,setMounted]=useState(false);
@@ -285,4 +285,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;
