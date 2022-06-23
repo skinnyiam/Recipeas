@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter as Userouter } from "next/router";
+
 
 const result = ({ title, image, id }) => {
-  const router = useRouter();
+  const router = Userouter();
   const handleSubmit = async () => {
     router.push({
       pathname: "/fullDetails",
@@ -21,16 +22,16 @@ const result = ({ title, image, id }) => {
               <div
                 id="tooltip-default"
                 role="tooltip"
-                class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"
+                className="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"
               >
                 Add to favourites
-                <div class="tooltip-arrow" data-popper-arrow></div>
+                <div className="tooltip-arrow" data-popper-arrow></div>
               </div>
               <svg
                 className="text-red-300 hover:text-red-700"
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                // stroke-width="0"
                 viewBox="0 0 1024 1024"
                 height="1em"
                 width="1em"
