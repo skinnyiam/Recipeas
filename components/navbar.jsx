@@ -46,13 +46,8 @@ const Navbar = () => {
     <>
       <Head>
         <title>Home | Recipeas</title>
-        <link rel="icon" type="image/png" sizes="16x16" href="/hamburger.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600;700&display=swap"
-          rel="stylesheet"
-        />
+       
+        
       </Head>
 
       <div className="z-10 backdrop-filter backdrop-blur-lg bg-opacity-0 h-14  w-screen mx-auto dark:bg-gray-800 bg-white  shadow-xl fixed flex justify-around  border-gray-200">
@@ -107,7 +102,7 @@ const Navbar = () => {
                      className="z-10 ml-4"
                      stroke="currentColor"
                      fill="currentColor"
-                     stroke-width="0"
+                    //  stroke-width="0"
                      viewBox="0 0 1024 1024"
                      height="1em"
                      width="1em"
@@ -122,7 +117,7 @@ const Navbar = () => {
                     className="z-10"
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    // stroke-width="0"
                     version="1.1"
                     viewBox="0 0 16 16"
                     height="1em"
@@ -217,7 +212,7 @@ const Navbar = () => {
                     className="z-10 ml-4"
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    // stroke-width="0"
                     viewBox="0 0 1024 1024"
                     height="1em"
                     width="1em"
@@ -232,7 +227,7 @@ const Navbar = () => {
                     className="z-10 mt-6"
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    // stroke-width="0"
                     version="1.1"
                     viewBox="0 0 16 16"
                     height="1em"

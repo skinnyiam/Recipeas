@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext'
 import Link from "next/link"
 import Head from 'next/head'
 
-const history = () => {
+const History = () => {
     const {user} = useAuth();
     if(user==null){
       return(
@@ -34,4 +34,4 @@ favourites
     )
 }
 
-export default history
+export default History

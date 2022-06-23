@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext'
 import Link from "next/link"
 import Head from 'next/head'
 
-const favourites = () => {
+const Favourites = () => {
 const {user} = useAuth();
     if(user==null){
       return(
@@ -35,4 +35,4 @@ favourites
   
 }
 
-export default favourites
+export default Favourites

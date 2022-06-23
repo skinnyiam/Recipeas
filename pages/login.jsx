@@ -1,11 +1,11 @@
 import React,{useState} from 'react'
-import { useAuth as Useauth} from '../context/AuthContext'
+import { useAuth } from '../context/AuthContext'
 import {useRouter} from 'next/router'
 import Head from "next/head"
 import Link from "next/link"
 
-const login = () => {
-    const {user,login} = Useauth();
+const Login = () => {
+    const {user,login} = useAuth();
     const router = useRouter();
     const [data,setData] = useState({
         email:'',
@@ -61,4 +61,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login

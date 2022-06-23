@@ -2,7 +2,7 @@ import React from "react";
 import Popular from "../components/Popular";
 import { useRouter } from "next/router";
 
-const index = () => {
+const Index = () => {
   const router = useRouter();
   const gotodashboard = () => {
     router.push("/dashboard");
@@ -51,4 +51,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

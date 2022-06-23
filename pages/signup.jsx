@@ -2,7 +2,7 @@ import React ,{useState} from 'react'
 import { useAuth } from '../context/AuthContext';
 import Head from "next/head"
 import Link from "next/link"
-const signup = () => {
+const Signup = () => {
     const { user,signup} = useAuth();
     console.log(user);
     const [data,setData] = useState({
@@ -58,4 +58,4 @@ const signup = () => {
   )
 }
 
-export default signup
+export default Signup

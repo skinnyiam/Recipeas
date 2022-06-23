@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Recipe = ({title,image,occasions}) => {
   return (
     <div className='bg-white rounded-lg h-[300px] w-64 flex flex-col m-4 '>

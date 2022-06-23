@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 const APP_KEY = "9f02ee0f0fe64934bfb55e6ebe6c32f4";
 
-const fullDetails = () => {
+const FullDetails = () => {
   const router = useRouter();
   const [details, setdetails] = useState({});
 
@@ -94,4 +94,4 @@ const fullDetails = () => {
   );
 };
 
-export default fullDetails;
+export default FullDetails;
