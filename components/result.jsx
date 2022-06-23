@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useRouter as Userouter } from "next/router";
+import { useRouter } from "next/router";
+import Image from "next/image"
 
-
-const result = ({ title, image, id }) => {
-  const router = Userouter();
+const Result = ({ title, image, id }) => {
+  const router = useRouter();
   const handleSubmit = async () => {
     router.push({
       pathname: "/fullDetails",
@@ -41,7 +41,9 @@ const result = ({ title, image, id }) => {
               </svg>
             </button>
           </div>
-          <img
+          <Image
+          width="250px"
+          height="64px"
             className="mt-[10px] rounded-2xl w-[250px] h-54"
             src={image}
             alt=""
@@ -62,4 +64,4 @@ const result = ({ title, image, id }) => {
   );
 };
 
-export default result;
+export default Result;

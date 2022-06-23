@@ -49,7 +49,7 @@ const Login = () => {
             <button type='submit' className='w-20 h-10 bg-cyan-600 rounded-md'> Login</button>
             </div>
             <div className='flex justify-center mt-4'>
-            <h1 className='mr-2'>Dont't have an account ?</h1>
+            <h1 className='mr-2'>Dont have an account ?</h1>
             <div className='text-blue-600 underline'>
             <Link  href="/signup">Sign Up</Link>
             </div>

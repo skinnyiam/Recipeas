@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-const footer = () => {
+const Footer = () => {
   return (
     <div className="flex justify-center dark:text-white text-black">
       Made by @ <span className="ml-2 text-red-600">Saurabh Shukla</span>
@@ -9,7 +9,7 @@ const footer = () => {
         className="ml-2 mt-[2px]"
         stroke="currentColor"
         fill="currentColor"
-        stroke-width="0"
+        // stroke-width="0"
         viewBox="0 0 1024 1024"
         height="20px"
         width="20px"
@@ -22,4 +22,4 @@ const footer = () => {
   );
 };
 
-export default footer;
+export default Footer;

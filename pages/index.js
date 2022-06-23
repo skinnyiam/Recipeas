@@ -15,7 +15,7 @@ const Index = () => {
         <div className="mt-12 mr-10 ">
           <p className="text-xl sm:text-3xl font-normal">
             {" "}
-            Let 's Start <br />
+            Lets Start <br />
             Cooking With <br />
             Popular Recipes!!
           </p>{" "}
