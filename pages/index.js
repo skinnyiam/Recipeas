@@ -10,25 +10,25 @@ const Index = () => {
 
   return (
     <>
-      <div className=" max-w-[1180px]  mx-auto  h-[600px]  m-0 p-16 text-2xl  flex  justify-center ">
+      <div className="max-w-[1180px] mx-auto sm:mx-auto  h-[450px] sm:h-[500px]  pt-16 sm:pt-16 text-2xl  flex  justify-center ">
         
-        <div className="mt-12 mr-10 ">
+        <div className="mt-4 sm:mt-12 mr-10 sm:w-auto ml-8 sm:ml-0">
           <p className="text-xl sm:text-3xl font-normal">
             {" "}
             Lets Start <br />
             Cooking With <br />
             Popular Recipes!!
           </p>{" "}
-          <p className="mt-2 text-xl text-gray-600 dark:text-blue-500">
+          <p className="mt-2 text-[15px] sm:text-xl text-gray-600 dark:text-blue-500">
             {" "}
             Want to learn cook but confused how to start ?{" "}
           </p>{" "}
-          <p className="text-xl text-gray-600 dark:text-blue-500">
+          <p className="text-[15px] sm:text-xl text-gray-600 dark:text-blue-500">
             {" "}
             No need to worry again!{" "}
           </p>{" "}
-          <div className="mt-14">
-            <p className="mt-2 text-xl text-gray-600 dark:text-blue-500">
+          <div className="mt-2 sm:mt-14">
+            <p className="mt-2 text-[15px] sm:text-xl text-gray-600 dark:text-blue-500">
               Search your favourite recipeas here....{" "}
             </p>{" "}
             <button

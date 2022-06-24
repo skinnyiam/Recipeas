@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Image from "next/image"
 const APP_KEY = "9f02ee0f0fe64934bfb55e6ebe6c32f4";
 
 const FullDetails = () => {
@@ -31,7 +32,7 @@ const FullDetails = () => {
   </Head>
 
       <div className="h-full w-full pt-[100px] flex-col">
-        <div className="flex justify-center items-center flex-col w-[350px] rounded-lg shadow-gray-900 shadow-2xl bg-gray-200 h-[370px] mx-auto">
+        <div className="flex justify-center items-center flex-col w-auto sm:w-[350px] rounded-lg shadow-gray-900 shadow-2xl bg-gray-200 h-[370px] mx-auto">
           <h1 className="mx-0 text-xl p-[4px] font-bold text-indigo-800">{details.title}</h1>
           <img
             className=" mt-2 rounded-full w-[300px] h-[300px] border "
@@ -70,13 +71,14 @@ const FullDetails = () => {
               className="text-gray-800 mt-2 p-4 font-semibold text-sm mx-4 sm:mx-0 bg-gray-100 rounded-lg border border-blue-600 drop-shadow-xl"
               dangerouslySetInnerHTML={{ __html: details.instructions }}
             ></h3>
-            <h3 className="text-indigo-800 text-xl font-bold pt-12 flex justify-center mb-2 sm:justify-start">Ingredients:</h3>
-            
+            <h3 className="text-indigo-800 text-xl font-bold pt-12 flex justify-center mb-2 sm:justify-start ">Ingredients:</h3>
+            <div className="border-blue-600 p-4 mx-4 sm:mx-0 bg-gray-100 rounded-lg drop-shadow-xl border">
               {details.extendedIngredients?.map((ingredient)=>{
                 return(
-                <li className="text-black dark:text-white text-sm font-medium mx-4 sm:mx-0" key={ingredient.id}>{ingredient.original}</li>
+                <li className="text-black dark:text-black text-sm font-medium mx-4 sm:mx-0" key={ingredient.id}>{ingredient.original}</li>
                 )
               })}
+              </div>
               
           {/* {details.analyzedInstructions ? (
             details.analyzedInstructions[0].steps.map((instruction) => {

@@ -2,8 +2,8 @@ import React from "react";
 import Link from "next/link";
 const Footer = () => {
   return (
-    <div className="flex justify-center dark:text-white text-black">
-      Made by @ <span className="ml-2 text-red-600">Saurabh Shukla</span>
+    <div className="flex justify-center dark:text-white text-black bg-gradient-to-r from-purple-500 to-pink-500 mt-6">
+      Made by @ <span className="ml-2 text-black">Saurabh Shukla</span>
       <a href="https://github.com/skinnyiam/Recipeas">
       <svg
         className="ml-2 mt-[2px]"

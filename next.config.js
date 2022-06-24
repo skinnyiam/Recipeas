@@ -1,5 +1,5 @@
 module.exports = {
     images: {
-        hostname: ['spoonacular.com'],
+        domains: ["spoonacular.com"],
     },
 }
