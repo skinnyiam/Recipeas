@@ -37,12 +37,7 @@ const Navbar = () => {
       <Head>
         <title>Home | Recipeas</title>
         <link rel="icon" type="image/png" sizes="16x16" href="/hamburger.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600;700&display=swap"
-          rel="stylesheet"
-        />
+        
       </Head>
    
       <div className="z-10 backdrop-filter backdrop-blur-lg bg-opacity-0 h-14  w-screen mx-auto bg-white  shadow-xl fixed flex justify-around  border-gray-200">
