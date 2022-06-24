@@ -11,7 +11,7 @@ import SearchField from "../components/searchField";
 
 
 
-const navbar = () => {
+const Navbar = () => {
   const { user, logout } = useAuth();
   const router = useRouter();
   const {systemTheme , theme, setTheme} = useTheme ();
@@ -159,4 +159,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;
