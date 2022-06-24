@@ -7,8 +7,7 @@ const Popular = () => {
   
   const [recipes, setRecipes] = useState([]);
 
-  const API_KEY="294e46d22b5e47a68cd0fe98eb601ea5
-"
+  const API_KEY="294e46d22b5e47a68cd0fe98eb601ea5"
 
   useEffect(() => {
     getRecipeas();
