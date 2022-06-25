@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image"
-const APP_KEY = "9f02ee0f0fe64934bfb55e6ebe6c32f4";
+const APP_KEY = "294e46d22b5e47a68cd0fe98eb601ea5";
 
 const FullDetails = () => {
   const router = useRouter();

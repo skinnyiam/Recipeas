@@ -10,13 +10,11 @@ const Recipe = ({ title, image }) => {
           {title}
         </h1>
       </div>
-      <div className="p-[4px] mx-auto">
+      <div className=" mx-auto">
         <img
-          width="216px"
-          height="216px"
-          className="mt-[20px] rounded  "
+          className="mt-[20px] rounded  w-auto sm:w-[215px] h-[215px]"
           src={url}
-          alt={title}
+          alt=""
         />
       </div>
     </div>

@@ -14,17 +14,19 @@ const Result = ({ title, image, id }) => {
   };
   return (
     <>
-      <div className="bg-slate-700 sm:bg-slate-700 rounded-lg border-blue-300 border-[3px] sm:border-[1px] shadow-2xl h-[330px] w-screen sm:w-64 flex flex-col mx-auto mb-6 justify-between">
+      <div className="dark:bg-slate-700 bg-white rounded-lg border-blue-300 border-[2px] sm:border-[1px] shadow-2xl h-[330px] w-screen sm:w-64 flex flex-col mx-auto mb-6 justify-between">
         <div className="flex-col justify-center items-center w-auto sm:w-64 ">
-          <div className="flex flex-col justify-center sm:justify-center p-2">
-            <h1 className=" text-[13px] text-white  w-auto font-bold dark:text-white">{title}</h1>
+          <div className="flex flex-col justify-center sm:justify-center ">
+            <h1 className=" text-[13px] text-black  w-auto font-bold dark:text-white">{title}</h1>
+            
             <Image
           width="250px"
           height="224px"
-            className="mt-[14px] rounded-2xl p-2"
+            className="mt-[14px]  rounded-md "
             src={image}
             alt=""
           />
+          
           </div>
           
          
@@ -34,7 +36,7 @@ const Result = ({ title, image, id }) => {
        
           <button
             onClick={handleSubmit}
-            className="flex mx-auto justify-center items-center w-screen sm:w-64 text-[15px] text-gray-400 rounded-lg font-bold bg-blue-500 hover:text-gray-800"
+            className="flex mx-auto justify-center items-center w-auto sm:w-[200px] text-[15px] text-gray-400 rounded-md font-bold dark:bg-black bg-blue-500 hover:text-gray-800"
           >
             See full recipe
           </button>

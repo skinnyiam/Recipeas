@@ -5,7 +5,7 @@ import Result from "../components/result";
 const Dashboard = () => {
   const router = useRouter();
 
-  const APP_KEY = "9f02ee0f0fe64934bfb55e6ebe6c32f4";
+  const APP_KEY = "294e46d22b5e47a68cd0fe98eb601ea5";
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -70,7 +70,7 @@ const Dashboard = () => {
           </div>
         </form>
       </div>
-      <div className="mx-auto mt-10  pt-4 max-w-[1180px] h-auto text-2xl p-4 sm:p-0  justify-center  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4" >
+      <div className="mx-auto mt-10  pt-4 max-w-[1180px] h-auto text-2xl  justify-center  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4" >
     
           {recipes.map((recipe) => {
             return (
