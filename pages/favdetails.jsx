@@ -4,7 +4,7 @@ import Head from "next/head";
 
 const APP_KEY = "294e46d22b5e47a68cd0fe98eb601ea5";
 
-const favdetails = () => {
+const Favdetails = () => {
     const router = useRouter();
     const [details, setdetails] = useState({});
 
@@ -94,4 +94,4 @@ const favdetails = () => {
   )
 }
 
-export default favdetails
+export default Favdetails

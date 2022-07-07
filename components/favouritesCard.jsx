@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import { Image} from "next/image"
 import {useRouter} from "next/router"
 
-const favouritesCard = ({
+const FavouritesCard = ({
   title,
   image,
   id,
@@ -86,4 +86,4 @@ const favouritesCard = ({
   );
 };
 
-export default favouritesCard;
+export default FavouritesCard;
