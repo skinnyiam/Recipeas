@@ -10,12 +10,16 @@ const Favourites = () => {
   const [favouritesCardItems, setFavouritesCardItems] = useState([]);
   const { getFavourites } = useFirestore();
 
+const loadFavorites=()=>{
+  if (user) {
+    getFavourites(user.uid).then((data) => {
+      setFavouritesCardItems(data);
+    });
+  }
+}
+
   useEffect(() => {
-    if (user) {
-      getFavourites(user.uid).then((data) => {
-        setFavouritesCardItems(data);
-      });
-    }
+    loadFavorites()
   }, []);
 
   useEffect(()=>{
@@ -45,7 +49,7 @@ const Favourites = () => {
       <Head>
         <title>Favourites | Recipeas</title>
       </Head>
-      <div className="h-screen">
+      <div className="mx-auto pt-20 max-w-[1180px] h-screen text-2xl  justify-center  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4">
         {favouritesCardItems.map((card)=>{
           return (
             <FavouritesCard
@@ -53,6 +57,8 @@ const Favourites = () => {
             id={card.id}
             title={card.title}
             image={card.image}
+            favouritesCardItems={favouritesCardItems}
+            setFavouritesCardItems={setFavouritesCardItems}
 
             />
           )    

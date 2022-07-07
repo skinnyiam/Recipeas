@@ -73,11 +73,7 @@ const Navbar = () => {
                     <Link href="/favourites">Favourites</Link>
                   </li>
                 </button>
-                <button className="text-base dark:text-white text-gray-800 font-medium mr-4">
-                  <li>
-                    <Link href="/history">History</Link>
-                  </li>
-                </button>
+                
 
                 <button
                   className="w-[65px] h-[38px] border border-blue-700 dark:text-white font-medium rounded text-base text-blue-700"
@@ -88,7 +84,7 @@ const Navbar = () => {
                 >
                   Logout
                 </button>
-                <li>{renderThemeChanger()}</li>
+                <li className="ml-2">{renderThemeChanger()}</li>
               </ul>
 
               {/* desktop view ends  */}
@@ -149,9 +145,7 @@ const Navbar = () => {
                 <button onClick={handleClick} className=" dark:text-white text-gray-800 font-medium mr-4 py-6 text-2xl">
                   <Link href="/favourites">Favourites</Link>
                 </button>
-                <button onClick={handleClick} className=" dark:text-white text-gray-800 font-medium mr-4 py-6 text-2xl">
-                  <Link href="/history">History</Link>
-                </button>
+                
 
                 <button 
                   className="w-[65px] h-[38px] mr-8 mt-4  dark:text-white font-medium rounded text-2xl text-blue-700"
@@ -187,11 +181,7 @@ const Navbar = () => {
                     <Link href="/favourites">Favourites</Link>
                   </li>
                 </button>
-                <button className="text-base dark:text-white text-gray-800 font-medium mr-4">
-                  <li>
-                    <Link href="/history">History</Link>
-                  </li>
-                </button>
+                
 
                 <li>
                   <button className="w-[65px] dark:text-white h-[38px] border border-blue-700 font-medium rounded text-base text-blue-700">
@@ -260,9 +250,7 @@ const Navbar = () => {
                 <button onClick={handleClick} className=" dark:text-white text-gray-800 font-medium mr-4 py-6 text-2xl">
                   <Link href="/favourites">Favourites</Link>
                 </button>
-                <button onClick={handleClick} className=" dark:text-white text-gray-800 font-medium mr-4 py-6 text-2xl">
-                  <Link href="/history">History</Link>
-                </button>
+                
 
                 <button onClick={handleClick} className="w-[65px] mr-4 py-6 text-2xl dark:text-white h-[38px]  font-medium rounded text-blue-700">
                   <Link href="/login">Login</Link>
