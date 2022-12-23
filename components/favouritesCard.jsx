@@ -4,6 +4,8 @@ import { useAuth } from "../context/AuthContext";
 import { Image} from "next/image"
 import {useRouter} from "next/router"
 
+
+
 const FavouritesCard = ({
   title,
   image,
@@ -28,6 +30,7 @@ const FavouritesCard = ({
   };
   const router = useRouter();
   const handleSubmit = async () => {
+
     router.push({
       pathname: "/favdetails",
       query: {

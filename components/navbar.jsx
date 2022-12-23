@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <>
       <Head>
-        <title>Home | Recipeas</title>
+        <title>Home | Recipea</title>
         <link rel="icon" type="image/png" sizes="16x16" href="/hamburger.png" />
       </Head>
 

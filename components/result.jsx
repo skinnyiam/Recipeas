@@ -3,6 +3,9 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import useFirestore from "../hooks/useFirestore";
 import { useAuth } from "../context/AuthContext";
+import {ToastContainer,toast} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+// toast.configure();
 
 const Result = ({ title, image, id }) => {
   const { addFavourite } = useFirestore();
@@ -15,8 +18,12 @@ const Result = ({ title, image, id }) => {
     }
   };
 
+  const notify = () => {
+    console.log("yes")
+    toast("wow");}
   const router = useRouter();
   const handleSubmit = async () => {
+    notify();
     router.push({
       pathname: "/fullDetails",
       query: {
@@ -33,6 +40,7 @@ const Result = ({ title, image, id }) => {
               <h1 className=" text-[13px] text-black  w-auto font-bold dark:text-white">
                 {title}
               </h1>
+              <ToastContainer />
               <button onClick={handleFavClick}>
                 <svg
                   stroke="currentColor"
